@@ -1,4 +1,13 @@
 #!/bin/bash
 
-i3-save-tree --workspace 3 > ~/.config/i3/workspace_3.json
-sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' ~/.config/i3/workspace_3.json
+if [ $# -ne 2 ]; then
+	printf "[Usage]: <window num> <name of workspace>\n"
+	exit 1
+fi 
+SAVE_FILE=~/.config/i3/ws_$2.json
+echo "save file is $SAVE_FILE"
+i3-save-tree --workspace $1 > $SAVE_FILE
+sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d ; s/"machine[^\n]*//' $SAVE_FILE
+sed -i 's/"title":[^\n]*// ; s/"window_role":[^\n]*//' $SAVE_FILE
+#sed -i '"title:"^[\n]*' $SAVE_FILE
+#sed -i '"window_role:"^[\n]*' $SAVE_FILE
