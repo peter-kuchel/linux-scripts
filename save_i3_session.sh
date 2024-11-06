@@ -11,7 +11,3 @@ i3-save-tree --workspace $1 > $SAVE_FILE
 sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' $SAVE_FILE
 sed -i 's/[\s]*\"machine[^\n]*//g ; s/"title":[^\n]*//g' $SAVE_FILE
 sed -i 's/\(\"instance[^,]*\),/\1/' $SAVE_FILE
-#sed -i 's/
-#sed -i 's/"machine[^\n]*// ; s/"title":[^\n]*// ; s/"window_role":[^\n]*//' $SAVE_FILE
-#sed -i '"title:"^[\n]*' $SAVE_FILE
-#sed -i '"window_role:"^[\n]*' $SAVE_FILE

@@ -11,6 +11,7 @@ fi
 
 i3-msg "workspace $1; append_layout ~/.config/i3/$WORKSPACE_FILE"
 
+# switch on workspace, and then reload the terminals + programs that are needed
 case $2 in 
 	"sk")			
 		
@@ -22,11 +23,3 @@ case $2 in
 	*)
 		echo "workspace not recognized" ;;
 esac
-
-# retore workspace for firefox
-# i3-msg "workspace 2; append ~/.config/i3/workspace_ff.json"
-
-
-# restore workspace for general ( first workspace )
-# i3-msg "workspace 1; append ~/config/i3/workspace_gen.json" 
-#
