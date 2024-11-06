@@ -13,11 +13,14 @@ i3-msg "workspace $1; append_layout ~/.config/i3/$WORKSPACE_FILE"
 
 # switch on workspace, and then reload the terminals + programs that are needed
 case $2 in 
-	"sk")			
+	
+	"sk"|"sk2")			
 		
-		(kitty -d ~/skillissue/src &)
 		(kitty -d ~/skillissue &)
-		(kitty -d ~/skillissue &) ;;	
+		(kitty -d ~/skillissue &)
+		(kitty -d ~/skillissue &);;&
+	"sk2")
+		(kitty -d ~/skillissue &);;
 	"ff")
 		(kitty firefox &);;
 	*)
