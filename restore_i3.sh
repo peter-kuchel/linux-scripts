@@ -15,7 +15,7 @@ i3-msg "workspace $1; append_layout ~/.config/i3/$WORKSPACE_FILE"
 case $2 in 
 	"sk")			
 		
-		(kitty -d ~/skillissue &)
+		(kitty -d ~/skillissue/src &)
 		(kitty -d ~/skillissue &)
 		(kitty -d ~/skillissue &) ;;	
 	"ff")
