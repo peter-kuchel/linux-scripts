@@ -2,6 +2,11 @@
 
 # $1 is which workspace window to assign to
 # which worksspace layout to use
+
+if [ $# -ne 2 ]; then
+	printf "[Usage]: <window num> <name of workspace>\n"
+fi
+
 WORKSPACE_FILE="ws_$2.json"
 
 if [! -f $WORKSPACE_FILE ]; then
