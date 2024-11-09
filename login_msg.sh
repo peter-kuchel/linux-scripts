@@ -3,6 +3,7 @@
 DIR="$HOME/linux_scripts"
 
 BANNER="$DIR/banner.log"
+BANNER2="$DIR/banner2.log"
 TODOS="$DIR/todo.log"
 QUOTES="$DIR/quotes.log"
 
@@ -20,6 +21,12 @@ if [ ! -f $TODOS ]; then
 else 
 	cat $TODOS
 fi 
+
+if [ -f $BANNER2 ]; then
+	printf "\n"
+	cat $BANNER2
+	printf "\n"
+fi	
 
 echo ${arr[$QUOTE_SEL]} | cowsay
 
